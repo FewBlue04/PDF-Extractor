@@ -97,22 +97,6 @@ index.html
 
 Do not commit API keys to this repository.
 
-## GitHub Pages Deployment
-
-This project is intended to be deployed from the repository root.
-
-1. Push the project files to the `main` branch.
-2. Open the repository on GitHub.
-3. Go to **Settings** > **Pages**.
-4. Set **Source** to **Deploy from a branch**.
-5. Choose the `main` branch and `/ (root)` folder.
-6. Save the settings.
-
-The deployed site is available at:
-
-```text
-https://fewblue04.github.io/PDF-Extractor/
-```
 
 ## Future Enhancements
 
