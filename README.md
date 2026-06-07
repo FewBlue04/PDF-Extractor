@@ -1,111 +1,127 @@
 # PDF Intelligence Extractor
 
-A browser-based tool that lets users upload a PDF and extract key details using Google's Gemini AI. No backend is required: the app runs entirely in the browser and can be hosted on GitHub Pages.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0d766e)](https://fewblue04.github.io/PDF-Extractor/)
+[![Built with React](https://img.shields.io/badge/React-18-61dafb)](https://react.dev/)
+[![AI Model](https://img.shields.io/badge/Gemini-2.5%20Flash-4285f4)](https://ai.google.dev/)
+
+PDF Intelligence Extractor is a browser-based tool for uploading a PDF and extracting structured insights with Google's Gemini API. It runs entirely on the frontend, requires no backend, and is deployable as a static GitHub Pages site.
+
+## Live Site
+
+https://fewblue04.github.io/PDF-Extractor/
+
+## Overview
+
+Users provide their own Gemini API key at runtime, upload a PDF, and receive a structured document analysis that includes the document title, type, summary, key entities, topics, action items, and conclusions.
+
+The application is designed as a lightweight portfolio project: simple to run, easy to deploy, and transparent about how user data is handled.
 
 ## Features
 
-- Paste a Gemini API key at runtime
-- Upload one PDF file
-- Send the PDF directly from the browser to the Gemini API
-- Extract a document title, type, summary, entities, topics, action items, and conclusions
-- Display results in a clean structured layout
-- No install, no build step, no server
+- Browser-only PDF analysis
+- Runtime Gemini API key entry
+- Native PDF submission to Gemini as inline file data
+- Structured extraction for summaries, entities, topics, action items, and conclusions
+- Clear loading, validation, success, and error states
+- No backend, database, build system, or package installation
 
 ## Tech Stack
 
-- React 18 via CDN
-- ReactDOM 18 via CDN
-- Babel Standalone via CDN for in-browser JSX
-- Google Gemini REST API with `gemini-2.5-flash`
-- Static HTML, CSS, and JavaScript
+| Layer | Technology |
+| --- | --- |
+| Frontend | React 18 via CDN |
+| Rendering | ReactDOM 18 via CDN |
+| JSX Support | Babel Standalone via CDN |
+| AI | Google Gemini REST API |
+| Model | `gemini-2.5-flash` |
+| Hosting | GitHub Pages |
 
 ## Project Structure
 
 ```text
-pdf-ai-extractor/
+PDF-Extractor/
 ├── index.html
 ├── app.jsx
 ├── styles.css
 └── README.md
 ```
 
-## Setup
-
-1. Create a public GitHub repository.
-2. Clone it locally:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/pdf-ai-extractor.git
-cd pdf-ai-extractor
-```
-
-3. Add these project files to the repo root:
-
-- `index.html`
-- `app.jsx`
-- `styles.css`
-- `README.md`
-
-4. Open `index.html` in a browser, or serve the folder with any static file server.
-
-No `npm install`, `package.json`, or build command is required.
-
-## Get a Gemini API Key
-
-1. Go to https://aistudio.google.com
-2. Sign in with your Google account.
-3. Click **Get API Key**.
-4. Create and copy an API key.
-5. Paste the key into the app when you use it.
-
-The key is not stored by this app.
-
 ## How It Works
 
-1. User opens the site.
-2. User pastes their own Gemini API key.
-3. User uploads a PDF file.
-4. The app converts the PDF to base64 in the browser.
-5. The app sends the PDF directly to Google's Gemini API using `gemini-2.5-flash`.
-6. Gemini analyzes the document and returns structured JSON.
-7. The app renders the extracted details.
+1. The user opens the GitHub Pages site.
+2. The user pastes their own Gemini API key.
+3. The user uploads a PDF file.
+4. The browser converts the PDF to base64.
+5. The app sends the PDF directly to Google's Gemini API.
+6. Gemini returns structured JSON.
+7. The app renders the extracted intelligence in a clean results layout.
 
-The extraction asks for:
+The app requests the following fields:
 
-- Document title and type
+- Document title
+- Document type
 - One-paragraph summary
-- Key entities: people, organizations, dates, and locations
+- People, organizations, dates, and locations
 - Main topics or themes
-- Important action items
+- Action items
 - Conclusions
 
 ## Privacy
 
-The API key and PDF are sent directly from the user's browser to Google's Gemini API. Nothing is stored on a custom server, and this project does not use localStorage or sessionStorage for the key or document.
+This project does not use a custom backend. The Gemini API key and uploaded PDF are sent directly from the user's browser to Google's Gemini API.
+
+The app does not store the API key or PDF in localStorage, sessionStorage, a database, or any custom server.
+
+## Running Locally
+
+No installation is required. Open `index.html` directly in a browser, or serve the folder with any static file server.
+
+```bash
+git clone https://github.com/FewBlue04/PDF-Extractor.git
+cd PDF-Extractor
+```
+
+Then open:
+
+```text
+index.html
+```
+
+## Getting a Gemini API Key
+
+1. Go to https://aistudio.google.com
+2. Sign in with a Google account.
+3. Click **Get API Key**.
+4. Create and copy an API key.
+5. Paste the key into the app when using the extractor.
+
+Do not commit API keys to this repository.
 
 ## GitHub Pages Deployment
 
-1. Push the files to the `main` branch.
+This project is intended to be deployed from the repository root.
+
+1. Push the project files to the `main` branch.
 2. Open the repository on GitHub.
 3. Go to **Settings** > **Pages**.
-4. Under **Source**, select **Deploy from a branch**.
+4. Set **Source** to **Deploy from a branch**.
 5. Choose the `main` branch and `/ (root)` folder.
-6. Click **Save**.
+6. Save the settings.
 
-Your site will be available at:
+The deployed site is available at:
 
 ```text
-https://YOUR_USERNAME.github.io/pdf-ai-extractor
+https://fewblue04.github.io/PDF-Extractor/
 ```
 
-## Optional Future Enhancements
+## Future Enhancements
 
-- Support multiple PDF uploads
-- Export extracted data as JSON or text
-- Add a dark/light mode toggle
-- Support DOCX and TXT files
-- Save extraction history in localStorage
-- Let users choose custom extraction prompts
+- Multiple PDF uploads
+- Export results as JSON or text
+- Dark and light theme toggle
+- Support for DOCX and TXT files
+- Saved extraction history
+- User-defined extraction prompts
 
 ## License
 
