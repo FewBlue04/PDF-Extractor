@@ -95,17 +95,7 @@ index.html
 4. Create and copy an API key.
 5. Paste the key into the app when using the extractor.
 
-Do not commit API keys to this repository.
-
-
-## Future Enhancements
-
-- Multiple PDF uploads
-- Export results as JSON or text
-- Dark and light theme toggle
-- Support for DOCX and TXT files
-- Saved extraction history
-- User-defined extraction prompts
+**Do not** commit API keys to this repository.
 
 ## License
 
